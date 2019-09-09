@@ -1,0 +1,22 @@
+{
+  "name": "gitbook-plugin-disqus-legacy",
+  "description": "Simple Disqus integration for Gitbook 3.x",
+  "version": "1.0.0",
+  "main": "index",
+  "engines": {
+    "gitbook": ">1.x.x"
+  },
+  "keywords": [
+    "disqus",
+    "gitbook"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcopeg/gitbook-plugin-disqus-legacy"
+  },
+  "author": {
+    "name": "marcopeg",
+    "url": "https://marcopeg.com"
+  },
+  "license": "MIT"
+}
