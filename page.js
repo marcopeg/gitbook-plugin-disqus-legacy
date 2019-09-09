@@ -2,7 +2,14 @@ module.exports = function (page) {
     const config = this.config.values.pluginsConfig['disqus-legacy']
     if (!config) return console.warn('disqus-legacy config missed')
 
-    page.content = page.content + `
+    // Exclude pages fro Disqus
+    const exclude = config.exclude || []
+    if (exclude.includes(page.path)) {
+        return page
+    }
+
+    const disqusCode = `
+<script>console.log(window.location.pathname)</script>
 <div id="disqus_thread"></div>
 <script>
 
@@ -23,6 +30,11 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>`
+
+
+    // Apply wrapper
+    const disqsWrapper = config.wrapper || '{{disqus}}'
+    page.content = page.content + disqsWrapper.replace('{{disqus}}', disqusCode)
 
     return page
 }

@@ -1,7 +1,7 @@
 {
   "name": "gitbook-plugin-disqus-legacy",
   "description": "Simple Disqus integration for Gitbook 3.x",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index",
   "engines": {
     "gitbook": ">1.x.x"
